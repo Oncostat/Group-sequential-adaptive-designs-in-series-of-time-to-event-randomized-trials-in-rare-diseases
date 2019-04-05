@@ -10,7 +10,10 @@
 #' @param lambda_0 A positive real number specifying the hazard rate associated with control arm of the first trial of the series.
 #' 
 #' @example
-#' DistributionFutureTreatmentEffects(index = 1, lambda_0 = log(2))
+#' DistributionFutureTreatmentEffects(
+#' index    = 1,
+#' lambda_0 = log(2)
+#' )
 #' 
 #' @return a vector with three elements (a,b,sigma)
 #' characterizing the distribution of future treatment effects in terms of hazard rate.
