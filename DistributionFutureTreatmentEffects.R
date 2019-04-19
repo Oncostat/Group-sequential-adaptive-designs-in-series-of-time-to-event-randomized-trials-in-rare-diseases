@@ -7,7 +7,7 @@
 #       2 : D2 the optimistic distribution
 #       3 : D3 the pessimistic distribution
 #       4 : D4 the very pessimistic distribution
-#' @param lambda_0 A positive real number specifying the hazard rate associated with control arm of the first trial of the series.
+#' @param lambda_0 A positive real number specifying the hazard rate associated with the control arm of the first trial of the series.
 #' 
 #' @example
 #' DistributionFutureTreatmentEffects(
@@ -15,7 +15,7 @@
 #' lambda_0 = log(2)
 #' )
 #' 
-#' @return a vector with three elements (a,b,sigma)
+#' @return a vector with three elements (a,b,\sigma)
 #' characterizing the distribution of future treatment effects in terms of hazard rate.
 
 DistributionFutureTreatmentEffects <- function(index, lambda_0) {
@@ -43,3 +43,8 @@ DistributionFutureTreatmentEffects <- function(index, lambda_0) {
   bb       <- log(e) + log(lambda_0) - 0.5*sigma^2
   return(c(round(aa,4), round(bb,3), round(sigma,3)) )
 }
+
+# Function to generate the mean of the hazard rate of the experimental group according to time since series initiation
+mu <- function(tl,al,bl) { 
+  mu  <- al*tl+bl
+} 
